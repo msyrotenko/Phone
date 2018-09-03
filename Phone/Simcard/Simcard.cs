@@ -8,19 +8,28 @@ using System.Threading.Tasks;
 namespace Phone
 {
 
-    public abstract class Simcard
+    public class Simcard
     {
-        private string moboperator;  
+        public enum Simcardtype { Mini, Macro, Nano };
 
-        public string Moboperator
+        
+        private string mobOperator;  
+
+        public string MobOperator
         {
-            get { return moboperator; }
-            set { moboperator = value; }
+            get { return mobOperator; }
+            set { mobOperator = value; }
         }
-
+        private Simcardtype simForm;
+        public Simcardtype SimForm
+        {
+            get { return simForm; }
+            set { simForm = value; }
+        }
         public Simcard()
         {
-            Moboperator = "Not defined";
+            MobOperator = "Not defined";
+            SimForm = Simcardtype.Nano;
         }
 
 

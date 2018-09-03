@@ -8,12 +8,12 @@ namespace Phone
 {
  public   class MultyTouchScreen:BasicTouchScreen
     {
-        private bool multiTouch;
+        private int multiTouchNum;
 
-        public bool MultiTouch
+        public int MultiTouchNum
         {
-            get { return multiTouch; }
-            set { multiTouch = value; }
+            get { return multiTouchNum; }
+            set { multiTouchNum = value; }
         }
         public void TouchReaction()
         {
@@ -21,7 +21,13 @@ namespace Phone
         }
         public override string ToString()
         {
-            return "Multy tuch screen";
+            return "Multy tuch screen with " + MultiTouchNum +" simultaneous touches are supported.";
         }
+
+     public MultyTouchScreen()
+     {
+         MultiTouchNum = 3;
+     }
+    
     }
 }

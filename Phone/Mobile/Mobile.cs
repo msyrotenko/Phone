@@ -13,9 +13,9 @@ namespace Phone
     public abstract class Mobile
     {
         public Battery Battery;
-        public abstract Dynamic Dynamic { get; }
+        public Simcard Simcard;
+        public abstract Speaker Speaker { get; }
         public abstract Microphone Microphone { get; }
-        public abstract Simcard Simcard { get; }
         public abstract ScreenBase Screen { get; }
         public abstract  Keyboard Keyboard { get; }
         public abstract BasicTouchScreen ControlTouch { get; }
@@ -23,6 +23,7 @@ namespace Phone
         public Mobile()
         {
             Battery = new Battery();
+            Simcard = new Simcard();
         }
         private void Show(IScreenImage screenImage)
        {
@@ -36,12 +37,16 @@ namespace Phone
             descriptionBuilder.AppendLine($"Generl status of components in the phone:");
             descriptionBuilder.AppendLine($"Screen Type: {Screen.ToString()}");
             descriptionBuilder.AppendLine($"Screen touch control: {ControlTouch.ToString()}");
-            descriptionBuilder.AppendLine($"The volume of dynamic is set to: {Dynamic.Volume}");
+            descriptionBuilder.AppendLine($"The volume of dynamic is set to: {Speaker.Volume}");
+            descriptionBuilder.AppendLine($"The power of the speaker is: {((SpeakerMono)Speaker).PowerWatts}");
+            descriptionBuilder.AppendLine($"The microphone setting: {((MicrophoneWithMute)Microphone).isMetedCheck()}");
             descriptionBuilder.AppendLine($"The volume of microphone is set to: {Microphone.Volume}");
-            descriptionBuilder.AppendLine($"Simcard: {Simcard.Moboperator}");
-            descriptionBuilder.AppendLine($"Simcard type: {((SimcardNano) Simcard).Simtype}");
+            descriptionBuilder.AppendLine($"Simcard: {Simcard.MobOperator}");
+            descriptionBuilder.AppendLine($"Simcard type: {Simcard.SimForm}");
             descriptionBuilder.AppendLine($"Battery: {Battery.CheckCapacity()}");
             descriptionBuilder.AppendLine($"Keyboard status: {((KeyboardWithLock) Keyboard).KeyboardLockerCheck()}");
+            descriptionBuilder.AppendLine($"Supported figures on the phone: {((KeyboardWithLock)Keyboard).Figures}");
+            descriptionBuilder.AppendLine($"Supported letters on the phone: {((KeyboardWithLock)Keyboard).Letters}");
             return descriptionBuilder.ToString();
 
         }

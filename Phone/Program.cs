@@ -11,7 +11,7 @@ namespace Phone
         static void Main(string[] args)
         {
             SimcorpMobile phone =new SimcorpMobile();
-            Console.WriteLine(phone.Screen.ToString());
+         //   Console.WriteLine(phone.Screen.ToString());
             Console.WriteLine(phone.GetDescription());
             Console.ReadLine();
         }

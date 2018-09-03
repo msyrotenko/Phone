@@ -8,17 +8,36 @@ namespace Phone
 {
   public  class BasicTouchScreen
     {
-        private bool touchScreen;
+        private bool isTouchEnabled;
 
-        public bool TouchScreen
+        public bool IsTouchEnabled
         {
-            get { return touchScreen; }
-            set { touchScreen = value; }
+            get { return isTouchEnabled; }
+            set { isTouchEnabled = value; }
         }
+
         public override string ToString()
         {
             return "Basic tuch screen";
         }
+
+      public string IsTouchEnableCheck()
+      {
+          if (isTouchEnabled)
+          {
+              return "Tocuh functionlity is enabled";
+          }
+          else
+          {
+              return "Tocuh functionlity is discabled";
+          }
+            
+       }
+
+      public BasicTouchScreen()
+      {
+          IsTouchEnabled = true;
+      }
 
     }
 }

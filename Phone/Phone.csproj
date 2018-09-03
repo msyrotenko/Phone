@@ -46,12 +46,12 @@
     <Compile Include="Batteary\Battery.cs" />
     <Compile Include="Control\BasicTouchScreen.cs" />
     <Compile Include="Control\MultyTouchScreen.cs" />
-    <Compile Include="Control\SingleTouchScreen.cs" />
-    <Compile Include="Dynamic\DynamicVolControl.cs" />
-    <Compile Include="Dynamic\Dynamic.cs" />
+    <Compile Include="Speaker\SpeakerStereo.cs" />
+    <Compile Include="Speaker\SpeakerMono.cs" />
+    <Compile Include="Speaker\Speaker.cs" />
     <Compile Include="Keyboard\Keyboard.cs" />
     <Compile Include="Keyboard\KeyboardWithLock.cs" />
-    <Compile Include="Microphone\MicrophoneVolControl.cs" />
+    <Compile Include="Microphone\MicrophoneWithMute.cs" />
     <Compile Include="Microphone\Microphone.cs" />
     <Compile Include="Mobile\Mobile.cs" />
     <Compile Include="Program.cs" />
@@ -62,8 +62,6 @@
     <Compile Include="Screen\OLEDScreen.cs" />
     <Compile Include="Screen\RetinaScreen.cs" />
     <Compile Include="Screen\ScreenBase.cs" />
-    <Compile Include="Simcard\SimcardNano.cs" />
-    <Compile Include="Simcard\SimcardMicro.cs" />
     <Compile Include="Simcard\Simcard.cs" />
     <Compile Include="Mobile\SimcorpMobile.cs" />
   </ItemGroup>

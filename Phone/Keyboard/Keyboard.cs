@@ -22,6 +22,11 @@ namespace Phone
             get { return letters; }
             set { letters = value; }
         }
+        public Keyboard()
+        {
+            Letters= "ABCDEFGHIKLMNOPQRSTVX";
+            Figures = "0123456789";
+        }
 
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,16 +16,21 @@ namespace Phone
             get { return size; }
             set { size = value; }
         }
-        private int pixels;
+        private int dpi;
 
-        public int Pixels
+        public int Dpi
         {
-            get { return pixels; }
-            set { pixels = value; }
+            get { return dpi; }
+            set { dpi = value; }
         }
-
 
         public abstract void Show(IScreenImage screenImage);
         public abstract void Show(IScreenImage screenImage, int brightness);
+
+        public ScreenBase()
+        {
+            Size = 2;
+            Dpi = 50;
+        }
     }
 }

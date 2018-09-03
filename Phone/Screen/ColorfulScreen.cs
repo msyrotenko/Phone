@@ -10,15 +10,29 @@ namespace Phone
     {            
         public override void Show(IScreenImage screenImage)
         {
-            Console.WriteLine("Display Image {0}x{1} in {2} quality on  colorfull screen", screenImage.Height, screenImage.Width, screenImage.Quality);
+            Console.WriteLine("Display Image {0}x{1}  on  colorfull screen", screenImage.Height, screenImage.Width);
         }
         public override void Show(IScreenImage screenImage, int brightness)
         {
-            Console.WriteLine("Display Image {0}x{1} in {2} quality on  colorfull screen with brightness={3}", screenImage.Height, screenImage.Width, screenImage.Quality,brightness);
+            Console.WriteLine("Display Image {0}x{1}  quality on  colorfull screen with brightness={2}", screenImage.Height, screenImage.Width,brightness);
         }
         public override string ToString()
         {
-            return "Colorfull Screen";
+            return "Colorfull Screen."+"Number of colors "+ColorsQnt;
+        }
+        private int colorsQnt;
+
+        public int ColorsQnt
+        {
+            get { return colorsQnt; }
+            set { colorsQnt = value; }
+        }
+
+        public ColorfulScreen()
+        {
+            Size = 3;
+            Dpi = 100;
+            ColorsQnt = 256000;
         }
     }
 }

@@ -8,19 +8,37 @@ namespace Phone
 {
     public class MonochromeScreen : ScreenBase
     {
+        private bool isBackLightEnabled;
+
+        public bool IsBackLightEnabled
+        {
+            get { return isBackLightEnabled; }
+            set { isBackLightEnabled = value; }
+        }
+
         public override void Show(IScreenImage screenImage)
         {
-            Console.WriteLine("Display Image {0}x{1} in {2} quality on monochrme screen", screenImage.Height,screenImage.Width, screenImage.Quality);
+            Console.WriteLine("Display Image {0}x{1} on monochrme screen", screenImage.Height,screenImage.Width);
         }
 
         public override void Show(IScreenImage screenImage, int brightness)
         {
-            Console.WriteLine("Display Image {0}x{1} in {2} quality on monochrme screen with brightness={3}", screenImage.Height, screenImage.Width, screenImage.Quality, brightness);
+            Console.WriteLine("Display Image {0}x{1} on monochrme screen with brightness={2}", screenImage.Height, screenImage.Width, brightness);
         }
 
         public override string ToString()
         {
-            return "Monochrome Screen";
+            string IsBackLightEnabledStr = "BackLight is terned on.";
+            if (IsBackLightEnabled)
+            {
+                IsBackLightEnabledStr = "BackLight is terned off.";
+            }
+            return "Monochrome Screen. " + IsBackLightEnabledStr;
+        }
+
+        public MonochromeScreen() : base()
+        {
+            IsBackLightEnabled = true;
         }
     }
     
