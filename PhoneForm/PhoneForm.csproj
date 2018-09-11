@@ -85,10 +85,6 @@
       <Project>{7466E671-D45B-439A-BDEF-C6D8F880561E}</Project>
       <Name>PhoneLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Phone\Phone.csproj">
-      <Project>{0db9ed32-e10e-47f0-a497-c459cbafc2ab}</Project>
-      <Name>Phone</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
