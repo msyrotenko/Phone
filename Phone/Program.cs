@@ -10,6 +10,7 @@ namespace Phone
     {
         static void Main(string[] args)
         {
+            // one more test
             SimcorpMobile phone =new SimcorpMobile();
          //   Console.WriteLine(phone.Screen.ToString());
             Console.WriteLine(phone.GetDescription());
