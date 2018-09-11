@@ -43,30 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Batteary\Battery.cs" />
-    <Compile Include="Control\BasicTouchScreen.cs" />
-    <Compile Include="Control\MultyTouchScreen.cs" />
-    <Compile Include="Speaker\SpeakerStereo.cs" />
-    <Compile Include="Speaker\SpeakerMono.cs" />
-    <Compile Include="Speaker\Speaker.cs" />
-    <Compile Include="Keyboard\Keyboard.cs" />
-    <Compile Include="Keyboard\KeyboardWithLock.cs" />
-    <Compile Include="Microphone\MicrophoneWithMute.cs" />
-    <Compile Include="Microphone\Microphone.cs" />
-    <Compile Include="Mobile\Mobile.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen\ColorfulScreen.cs" />
-    <Compile Include="Screen\IScreenImage.cs" />
-    <Compile Include="Screen\MonochromeScreen.cs" />
-    <Compile Include="Screen\OLEDScreen.cs" />
-    <Compile Include="Screen\RetinaScreen.cs" />
-    <Compile Include="Screen\ScreenBase.cs" />
-    <Compile Include="Simcard\Simcard.cs" />
-    <Compile Include="Mobile\SimcorpMobile.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
