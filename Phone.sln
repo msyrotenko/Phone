@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone", "Phone\Phone.csproj", "{0DB9ED32-E10E-47F0-A497-C459CBAFC2AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneMessage", "PhoneMessage\PhoneMessage.csproj", "{71F7399B-1E54-4D35-B02C-256A8D923C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{505D2D7A-6817-493E-980B-93A1D5CC3506}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0DB9ED32-E10E-47F0-A497-C459CBAFC2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB9ED32-E10E-47F0-A497-C459CBAFC2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB9ED32-E10E-47F0-A497-C459CBAFC2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F7399B-1E54-4D35-B02C-256A8D923C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F7399B-1E54-4D35-B02C-256A8D923C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F7399B-1E54-4D35-B02C-256A8D923C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F7399B-1E54-4D35-B02C-256A8D923C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{505D2D7A-6817-493E-980B-93A1D5CC3506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505D2D7A-6817-493E-980B-93A1D5CC3506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505D2D7A-6817-493E-980B-93A1D5CC3506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505D2D7A-6817-493E-980B-93A1D5CC3506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

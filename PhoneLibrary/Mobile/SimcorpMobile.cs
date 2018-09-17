@@ -27,6 +27,7 @@ namespace Phone
           microphoneVolControl = new MicrophoneWithMute();
           key = new KeyboardWithLock();
           control = new MultyTouchScreen();
+          SMSProvider = new SMSProvider();
         }
     }  
 }

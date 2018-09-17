@@ -16,6 +16,7 @@ namespace Phone
         public ICharger ChargerComponent { get; set; }
         public Battery Battery;
         public Simcard Simcard;
+        public SMSProvider SMSProvider { get; set; }
         public abstract Speaker Speaker { get; }
         public abstract Microphone Microphone { get; }
         public abstract ScreenBase Screen { get; }
@@ -42,7 +43,6 @@ namespace Phone
         }
         public string GetDescription()
         {
-
             var descriptionBuilder = new StringBuilder();
             descriptionBuilder.AppendLine($"Generl status of components in the phone:");
             descriptionBuilder.AppendLine($"Screen Type: {Screen.ToString()}");

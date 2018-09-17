@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7466E671-D45B-439A-BDEF-C6D8F880561E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{0D352BEB-2340-4009-BD4C-9CE042319719}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PhoneLibrary</RootNamespace>
-    <AssemblyName>PhoneLibrary</AssemblyName>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,51 +35,46 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudioJack\iPhoneHeadset.cs" />
-    <Compile Include="AudioJack\IPlayback.cs" />
-    <Compile Include="AudioJack\PhoneSpeaker.cs" />
-    <Compile Include="AudioJack\PlayBackComponents.cs" />
-    <Compile Include="AudioJack\SamsungHeadset.cs" />
-    <Compile Include="AudioJack\UnofficaialPhoneHeadset.cs" />
-    <Compile Include="Batteary\Battery.cs" />
-    <Compile Include="Charger\ChargerComponents.cs" />
-    <Compile Include="Charger\FakeCharger.cs" />
-    <Compile Include="Charger\ICharger.cs" />
-    <Compile Include="Charger\OriginalCharger.cs" />
-    <Compile Include="Control\BasicTouchScreen.cs" />
-    <Compile Include="Control\MultyTouchScreen.cs" />
-    <Compile Include="Ev\MKSK.cs" />
-    <Compile Include="Ev\VZL.cs" />
-    <Compile Include="Keyboard\Keyboard.cs" />
-    <Compile Include="Keyboard\KeyboardWithLock.cs" />
-    <Compile Include="Microphone\Microphone.cs" />
-    <Compile Include="Microphone\MicrophoneWithMute.cs" />
-    <Compile Include="Mobile\Mobile.cs" />
-    <Compile Include="Mobile\SimcorpMobile.cs" />
-    <Compile Include="Output\IOutput.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen\ColorfulScreen.cs" />
-    <Compile Include="Screen\IScreenImage.cs" />
-    <Compile Include="Screen\MonochromeScreen.cs" />
-    <Compile Include="Screen\OLEDScreen.cs" />
-    <Compile Include="Screen\RetinaScreen.cs" />
-    <Compile Include="Screen\ScreenBase.cs" />
-    <Compile Include="Simcard\Simcard.cs" />
-    <Compile Include="SMS\SMSCounter.cs" />
-    <Compile Include="SMS\SMSFormat.cs" />
-    <Compile Include="SMS\SMSProvider.cs" />
-    <Compile Include="Speaker\Speaker.cs" />
-    <Compile Include="Speaker\SpeakerMono.cs" />
-    <Compile Include="Speaker\SpeakerStereo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
