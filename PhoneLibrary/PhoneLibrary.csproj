@@ -54,8 +54,6 @@
     <Compile Include="Charger\OriginalCharger.cs" />
     <Compile Include="Control\BasicTouchScreen.cs" />
     <Compile Include="Control\MultyTouchScreen.cs" />
-    <Compile Include="Ev\MKSK.cs" />
-    <Compile Include="Ev\VZL.cs" />
     <Compile Include="Keyboard\Keyboard.cs" />
     <Compile Include="Keyboard\KeyboardWithLock.cs" />
     <Compile Include="Microphone\Microphone.cs" />
