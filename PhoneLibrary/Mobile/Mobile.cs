@@ -16,7 +16,9 @@ namespace Phone
         public ICharger ChargerComponent { get; set; }
         public Battery Battery;
         public Simcard Simcard;
+        public Storage Storage { get; protected set; }
         public SMSProvider SMSProvider { get; set; }
+        internal SMSProviderMesg SMSProviderMesg { get; set; }
         public abstract Speaker Speaker { get; }
         public abstract Microphone Microphone { get; }
         public abstract ScreenBase Screen { get; }
@@ -40,6 +42,11 @@ namespace Phone
         public void Charge(object data)
         {
             ChargerComponent.Charge(data);
+        }
+
+        public virtual void ReceiveSMS(Message message)
+        {
+            SMSProviderMesg.ReceiveSMS(message);
         }
         public string GetDescription()
         {

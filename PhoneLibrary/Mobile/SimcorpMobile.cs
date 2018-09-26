@@ -28,6 +28,8 @@ namespace Phone
           key = new KeyboardWithLock();
           control = new MultyTouchScreen();
           SMSProvider = new SMSProvider();
+          Storage = new Storage();
+          SMSProviderMesg = new SMSProviderMesg(Storage);
         }
     }  
 }

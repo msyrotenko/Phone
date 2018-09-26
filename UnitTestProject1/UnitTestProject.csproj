@@ -52,15 +52,25 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FilterUnitTest.cs" />
     <Compile Include="SMSProviderUnitTest.cs" />
     <Compile Include="TestClasses\TestOutput.cs" />
     <Compile Include="IPhoneHeadsetUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MessageFiltering\MessageFiltering.csproj">
+      <Project>{d54dd25c-4fd3-49ab-91b5-d25784c58412}</Project>
+      <Name>MessageFiltering</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhoneLibrary\PhoneLibrary.csproj">
       <Project>{7466e671-d45b-439a-bdef-c6d8f880561e}</Project>
       <Name>PhoneLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Phone\Phone.csproj">
+      <Project>{0db9ed32-e10e-47f0-a497-c459cbafc2ab}</Project>
+      <Name>Phone</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

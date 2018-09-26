@@ -28,7 +28,7 @@ namespace ConsoleApplication1
 
         static void Change2(StringBuilder str)
         {
-            var SMSRec = new object();
+            var SMSRec = new object(); 
             var handler = SMSRec;
             //
             SMSRec = null;

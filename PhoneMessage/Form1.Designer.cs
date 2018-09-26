@@ -36,9 +36,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 88);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 72);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(534, 364);
+            this.richTextBox1.Size = new System.Drawing.Size(534, 314);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -52,7 +52,7 @@
             "Custom",
             "Lowercase",
             "Uppercase"});
-            this.comboBox1.Location = new System.Drawing.Point(16, 32);
+            this.comboBox1.Location = new System.Drawing.Point(12, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 21);
             this.comboBox1.TabIndex = 1;
@@ -66,10 +66,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 464);
+            this.ClientSize = new System.Drawing.Size(572, 409);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 
