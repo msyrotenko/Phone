@@ -26,6 +26,6 @@ namespace MessageFiltering
                         ((!endDateIsChecked) || (x.ReceivingTime <= endDate)));
             }
             return showmsg;
-        }
+        } 
     }
 }

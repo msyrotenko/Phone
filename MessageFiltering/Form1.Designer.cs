@@ -36,11 +36,12 @@
             this.SrchMsgtextBox = new System.Windows.Forms.TextBox();
             this.startDateTime = new System.Windows.Forms.DateTimePicker();
             this.endDateTime = new System.Windows.Forms.DateTimePicker();
-            this.User1Timer = new System.Windows.Forms.Timer(this.components);
-            this.User2Timer = new System.Windows.Forms.Timer(this.components);
-            this.User3Timer = new System.Windows.Forms.Timer(this.components);
             this.AndCondcheckBox = new System.Windows.Forms.CheckBox();
             this.RefreshTimer = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.GenerateSmsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MessageListView
@@ -91,24 +92,6 @@
             this.endDateTime.TabIndex = 4;
             this.endDateTime.ValueChanged += new System.EventHandler(this.Search_Changed);
             // 
-            // User1Timer
-            // 
-            this.User1Timer.Enabled = true;
-            this.User1Timer.Interval = 2000;
-            this.User1Timer.Tick += new System.EventHandler(this.User1Timer_Tick);
-            // 
-            // User2Timer
-            // 
-            this.User2Timer.Enabled = true;
-            this.User2Timer.Interval = 3000;
-            this.User2Timer.Tick += new System.EventHandler(this.User2Timer_Tick);
-            // 
-            // User3Timer
-            // 
-            this.User3Timer.Enabled = true;
-            this.User3Timer.Interval = 4500;
-            this.User3Timer.Tick += new System.EventHandler(this.User3Timer_Tick);
-            // 
             // AndCondcheckBox
             // 
             this.AndCondcheckBox.AutoSize = true;
@@ -126,11 +109,52 @@
             this.RefreshTimer.Interval = 1000;
             this.RefreshTimer.Tick += new System.EventHandler(this.RefreshTimer_Tick);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 15);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(213, 21);
+            this.progressBar1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 32);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Charge";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(124, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 32);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Discharge";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // GenerateSmsBtn
+            // 
+            this.GenerateSmsBtn.Location = new System.Drawing.Point(28, 118);
+            this.GenerateSmsBtn.Name = "GenerateSmsBtn";
+            this.GenerateSmsBtn.Size = new System.Drawing.Size(75, 23);
+            this.GenerateSmsBtn.TabIndex = 9;
+            this.GenerateSmsBtn.Text = "Start genarate SMS";
+            this.GenerateSmsBtn.UseVisualStyleBackColor = true;
+            this.GenerateSmsBtn.Click += new System.EventHandler(this.GenerateSmsBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 407);
+            this.Controls.Add(this.GenerateSmsBtn);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.AndCondcheckBox);
             this.Controls.Add(this.endDateTime);
             this.Controls.Add(this.startDateTime);
@@ -141,6 +165,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Message Filtering";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,13 +178,14 @@
         private System.Windows.Forms.TextBox SrchMsgtextBox;
         private System.Windows.Forms.DateTimePicker startDateTime;
         private System.Windows.Forms.DateTimePicker endDateTime;
-        private System.Windows.Forms.Timer User1Timer;
-        private System.Windows.Forms.Timer User2Timer;
-        private System.Windows.Forms.Timer User3Timer;
         private System.Windows.Forms.CheckBox AndCondcheckBox;
         private System.Windows.Forms.ColumnHeader User;
         private System.Windows.Forms.ColumnHeader Message;
         private System.Windows.Forms.Timer RefreshTimer;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button GenerateSmsBtn;
     }
 }
 

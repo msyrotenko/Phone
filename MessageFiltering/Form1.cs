@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,19 +14,24 @@ namespace MessageFiltering
 {
     public partial class Form1 : Form
     {
+        bool isCharging;
+        bool isGeneratingSMS;
         private Mobile mobile;
-        private SMSCounter smscounter;
-        private List<string> users;
+        private List<string> users;    
 
         public Form1()
         {
             InitializeComponent();
+
             mobile = new SimcorpMobile();
-            smscounter = new SMSCounter();
             users = new List<string>();
 
             mobile.Storage.OnSMSAdded += OnSMSReceived;
+            
+            mobile.Battery.ChargeChanged += SetChargeProgressBar;
+            button2.Enabled = false;
         }
+
 
         private void OnSMSReceived(Phone.Message message)
         {
@@ -53,12 +59,12 @@ namespace MessageFiltering
             string srchmsg = SrchMsgtextBox.Text;
             DateTime startDate = startDateTime.Value.Date;
             DateTime endDate = new DateTime(endDateTime.Value.Year, endDateTime.Value.Month, endDateTime.Value.Day, 23, 59, 59);
-            bool startDateIsChecked=startDateTime.Checked;
+            bool startDateIsChecked = startDateTime.Checked;
             bool endDateIsChecked = endDateTime.Checked;
             bool andCondIsChecked = AndCondcheckBox.Checked;
             IEnumerable<Phone.Message> allmsg = mobile.Storage.GetMessages();
 
-            IEnumerable<Phone.Message> showmsg = Filter.FilterMsgs(srchuser, srchmsg, startDate, endDate, allmsg, startDateIsChecked, endDateIsChecked, andCondIsChecked);
+            IEnumerable<Phone.Message> showmsg = Filter.FilterMsgs(srchuser, srchmsg, startDate, endDate, allmsg.ToList(), startDateIsChecked, endDateIsChecked, andCondIsChecked);
             ShowMessages(showmsg);
         }
 
@@ -73,45 +79,6 @@ namespace MessageFiltering
             }
         }
 
-        private void User1Timer_Tick(object sender, EventArgs e)
-        {
-            string msgtext = "Message #" + smscounter.Count.ToString() + " received!";
-            smscounter.Add();
-            var msg = new Phone.Message
-            {
-                User = "Alex",
-                ReceivingTime = DateTime.Now,
-                Text = msgtext
-            };
-            mobile.ReceiveSMS(msg);
-        }
-
-        private void User2Timer_Tick(object sender, EventArgs e)
-        {
-            string msgtext = "Message #" + smscounter.Count.ToString() + " received!";
-            smscounter.Add();
-            var msg = new Phone.Message
-            {
-                User = "Bob",
-                ReceivingTime = DateTime.Now,
-                Text = msgtext
-            };
-            mobile.ReceiveSMS(msg); ;
-        }
-
-        private void User3Timer_Tick(object sender, EventArgs e)
-        {
-            string msgtext = "Message #" + smscounter.Count.ToString() + " received!";
-            smscounter.Add();
-            var msg = new Phone.Message
-            {
-                User = "John",
-                ReceivingTime = DateTime.Now,
-                Text = msgtext
-            };
-            mobile.ReceiveSMS(msg);
-        }
-
         private void Search_Changed(object sender, EventArgs e)
         {
             RefreshMsgListView();
@@ -121,5 +88,69 @@ namespace MessageFiltering
         {
             RefreshMsgListView();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = true;
+
+            if (isCharging)
+            {
+                return;
+            }
+
+            isCharging =  true;
+            mobile.Charger.StartCharge();
+        }
+     
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+            button1.Enabled = true;
+
+            if (!isCharging)
+            {
+                return;
+            }
+
+            isCharging = false;
+            mobile.Charger.StopCharge();
+        }
+
+        private void SetChargeProgressBar(int charge)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<int>(SetChargeProgressBar), charge);
+                return;
+            }
+
+            progressBar1.Value = mobile.Battery.Charge;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mobile.Charger.FinalyzeCharge();
+            mobile.StopReceiveSMS();
+            mobile.Battery.ChargeChanged -= SetChargeProgressBar;
+        }
+
+        private void GenerateSmsBtn_Click(object sender, EventArgs e)
+        {
+            if (isGeneratingSMS)
+            {
+                GenerateSmsBtn.Text = "Start";
+                mobile.StopReceiveSMS();
+                isGeneratingSMS = false;
+                return;
+            }
+
+            GenerateSmsBtn.Text = "Stop";
+            mobile.StartReceiveSMS();
+            isGeneratingSMS = true;
+        }
+
+
     }
 }

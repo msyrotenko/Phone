@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PhoneLibrary.Charger;
+using PhoneLibrary.SMS;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -18,12 +20,13 @@ namespace Phone
         public Simcard Simcard;
         public Storage Storage { get; protected set; }
         public SMSProvider SMSProvider { get; set; }
-        internal SMSProviderMesg SMSProviderMesg { get; set; }
+        internal SMSProviderBase SMSProviderBase { get; set; }
         public abstract Speaker Speaker { get; }
         public abstract Microphone Microphone { get; }
         public abstract ScreenBase Screen { get; }
         public abstract  Keyboard Keyboard { get; }
         public abstract BasicTouchScreen ControlTouch { get; }
+        public ChargerBase Charger { get; protected set; }
 
         public Mobile()
         {
@@ -44,10 +47,20 @@ namespace Phone
             ChargerComponent.Charge(data);
         }
 
-        public virtual void ReceiveSMS(Message message)
+        public void StartReceiveSMS()
         {
-            SMSProviderMesg.ReceiveSMS(message);
+            SMSProviderBase.Start();
         }
+
+        public void StopReceiveSMS()
+        {
+            SMSProviderBase.Stop();
+        }
+
+        //public virtual void ReceiveSMS(Message message)
+        //{
+        //    SMSProviderMesg.ReceiveSMS(message);
+        //}
         public string GetDescription()
         {
             var descriptionBuilder = new StringBuilder();

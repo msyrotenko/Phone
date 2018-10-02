@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PhoneLibrary.Charger;
+using PhoneLibrary.SMS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +31,9 @@ namespace Phone
           control = new MultyTouchScreen();
           SMSProvider = new SMSProvider();
           Storage = new Storage();
-          SMSProviderMesg = new SMSProviderMesg(Storage);
+          SMSProviderBase = SMSProviderFactory.GetSMSProvider(Storage);
+          Battery = new Battery();
+          Charger = ChargerFactory.GetCharger(Battery);
         }
     }  
 }

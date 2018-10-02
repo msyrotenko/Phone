@@ -10,33 +10,38 @@ namespace Phone
 {
     public class Battery
     {
-        private int capacity;
+        public event Action<int> ChargeChanged;
 
-        public int Capacity
+        private int charge;
+        public int Charge
         {
-            get { return capacity; }
-            set { capacity = value; }
-        }
+            get { return charge; }
+            set
+            {
+                if (value < 0) { charge = 0; }
+                else if (value > 100) { charge = 100; }
+                else {charge = value;}
+                ChargeChanged?.Invoke(charge);
+             }
 
+        }
         public Battery()
         {
-            Capacity = 100;
-
+            Charge = 100;
         }
 
         public string CheckCapacity()
         {
-            if (Capacity==100)
+            if (Charge == 100)
             {
                 return "The bettery is fully charged";
             }
-            
-            else if (Capacity > 0)
+
+            else if (Charge > 0)
             {
                 return "The bettery isn't fully charged";
             }
             return "The bettery is full uncharged";
-
 
         }
 
