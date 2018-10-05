@@ -47,6 +47,7 @@
     <Compile Include="AudioJack\PlayBackComponents.cs" />
     <Compile Include="AudioJack\SamsungHeadset.cs" />
     <Compile Include="AudioJack\UnofficaialPhoneHeadset.cs" />
+    <Compile Include="ContactBook\Call.cs" />
     <Compile Include="Charger\Batteary\Battery.cs" />
     <Compile Include="Charger\ChargerBase.cs" />
     <Compile Include="Charger\ChargerComponents.cs" />
@@ -56,6 +57,9 @@
     <Compile Include="Charger\FakeCharger.cs" />
     <Compile Include="Charger\ICharger.cs" />
     <Compile Include="Charger\OriginalCharger.cs" />
+    <Compile Include="ContactBook\CallProvider.cs" />
+    <Compile Include="ContactBook\CallStorage.cs" />
+    <Compile Include="ContactBook\Contact.cs" />
     <Compile Include="Control\BasicTouchScreen.cs" />
     <Compile Include="Control\MultyTouchScreen.cs" />
     <Compile Include="Keyboard\Keyboard.cs" />

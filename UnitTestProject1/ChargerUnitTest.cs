@@ -21,7 +21,7 @@ namespace UnitTestProject1
             Thread.Sleep(2000);
             Assert.IsTrue(100>battery.Charge);
             charger.FinalyzeCharge();
-        }
+        } 
 
         [TestMethod]
         public void ChargerThreadChargeTest()

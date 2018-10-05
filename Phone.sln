@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneMessage", "PhoneMessag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageFiltering", "MessageFiltering\MessageFiltering.csproj", "{D54DD25C-4FD3-49AB-91B5-D25784C58412}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallForm", "CallForm\CallForm.csproj", "{1CC4F27C-554B-4100-B927-5BEB99ED07B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D54DD25C-4FD3-49AB-91B5-D25784C58412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54DD25C-4FD3-49AB-91B5-D25784C58412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D54DD25C-4FD3-49AB-91B5-D25784C58412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC4F27C-554B-4100-B927-5BEB99ED07B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC4F27C-554B-4100-B927-5BEB99ED07B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC4F27C-554B-4100-B927-5BEB99ED07B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC4F27C-554B-4100-B927-5BEB99ED07B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
