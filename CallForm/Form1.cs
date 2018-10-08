@@ -51,10 +51,15 @@ namespace CallForm
                 var lastcall = callList.Last();
                 lastcall.AddNewCall(callVM);
                 string calldetails = $"[{lastcall.calltime}] {lastcall.calldirection} ({lastcall.count})";
-                listView1.Items[callList.Count()-1] = new ListViewItem(new[] { lastcall.contact.name, calldetails });
+                listView1.Items[callList.Count() - 1] = new ListViewItem(new[] { lastcall.contact.name, calldetails });
             }
 
   
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            provider.Stop();
         }
     }
 }
